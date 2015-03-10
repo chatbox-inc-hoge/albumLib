@@ -1,0 +1,13 @@
+{
+    "name": "root/album-lib",
+    "authors": [
+        {
+            "name": "mikakane",
+            "email": "mikakane2@gmail.com"
+        }
+    ],
+    "require": {
+        "chatbox/album": "dev-master"
+    },
+    "minimum-stability":"dev"
+}

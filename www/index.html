@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bower_components/angular/angular-csp.css"/>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="/js/jquery.album.js"></script>
+
+    <script>
+        $(function(){
+            var album = $.album({
+                entry: "/api.php/"
+            });
+            console.log("album object",album);
+
+            album.bookList()
+        });
+
+    </script>
+</head>
+<body>
+<div data-ng-include="'/header.html'"></div>
+<div class="container">
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Image Upload Sample</h1>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>

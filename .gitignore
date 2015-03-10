@@ -1,0 +1,5 @@
+/vendor
+/www/bower_components
+/www/js/
+/node_modules
+/composer.lock
