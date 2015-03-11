@@ -16,14 +16,24 @@ class Album
       @setting = config
     else
       return new Album config
-  upload:
-    zip: (category,file)->
-      console.log "zip method",category,file,@config
-    file: (category,file)->
-      console.log "file method",category,file,@config
-  book: ()->
-    console.log "book method",@config
-  bookList: ()->
+  uploadZip: (category,file,cb)->
+    console.log "zip method"
+    setting = @setting
+    reader = new FileReader();
+    reader.readAsDataURL file,"UTF-8" # ここでファイルが取れる
+    reader.onload = ()->
+      xhr = sendRequest "post",setting,"archive/upload",
+        data: this.result
+        category: category
+      cb xhr
+
+
+  uploadFile: (category,file)->
+    console.log "file method",category,file,@config
+  bookInfo: (bookName)-> # カテゴリー情報の取得
+    sendRequest "get",@setting,"book/info/#{bookName}"
+
+  bookList: ()-> # カテゴリー一覧の取得
     sendRequest "get",@setting,"book/list/"
 
 
